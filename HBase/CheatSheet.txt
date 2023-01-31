@@ -142,29 +142,3 @@ Example: get 'f','1',{COLUMN => 'f1:name'}
 
 Command: get <table_name>, <row_key>, {COLUMN => ['<column_family>:column1_name','<column_family>:column2_name',...]} 
 Example: get 'f','1',{COLUMN => ['f1:name','f1:id']}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
