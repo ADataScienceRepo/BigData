@@ -1,0 +1,170 @@
+
+Reference:
+Youtyoub Channel -----------> Unboxing Big Data
+
+
+Links:
+https://www.youtube.com/watch?v=4lEDlt_VzVQ&list=PLeUBsMTwZBi2du2xyMuzZJnxqsjSH69H7&index=8
+
+https://www.youtube.com/watch?v=WBdtu79ObDA&list=PLeUBsMTwZBi2du2xyMuzZJnxqsjSH69H7&index=9
+
+https://www.youtube.com/watch?v=5VBnZdGG3Uo&list=PLeUBsMTwZBi2du2xyMuzZJnxqsjSH69H7&index=10
+
+-----------------------------------------------------------------------------------------------------------------
+--Video_1--------------------------------------------------------------------------------------------------------
+-------------------------------- General Commands ----------------------------------------
+
+- status                          Gives information related to the server         
+- status 'simple'                 Gives some more info than the pre command  
+- status 'detailed'               Give the max status info details
+--------------------------------------------------------------------------------------------------------------
+-  version          the version of the HABSE
+-  table_help       Gives you the different options you might counter when you try to create a table 
+-  whoami            the HBaseUser
+--------------------------------------------------------------------------------------------------------------
+-------------------------------- Table management Commands ----------------------------------------
+
+Command: create <table_name> <column_family>
+Example: create 'mytable', 'colfam'
+
+
+Command: list                                        - List all the exist tables 
+Example: list 
+
+
+Command: describe <table_name> 
+Example: describe 'mytable'
+
+
+
+Command: disable <table_name>                        - The intermidate step before delete the table
+Example: disable  'mytable'                          - We can use the decribe command  to show the status of the table 
+
+
+
+
+Command: enable <table_name>                        - The opposite of the previous command
+Example: enable 'mytable'
+
+
+
+Command: drop <table_name>                          - You need to use the disable command before it 
+Example: drop'mytable'                              - We can use the list command to check the existance & the deletion
+
+
+-----------------------------------------------------------------------------------------------------------------
+--Video_2--------------------------------------------------------------------------------------------------------
+----------------------------------------Alter--------------------------------------------------------------
+- create 'test_table','colfam1'
+
+
+Command: alter <table_name>, {NAME => <column_family_new_name>}                        
+Example: alter 'test_table', {NAME => 'colfam2'} 
+
+
+Command: alter <table_name>, {NAME => <column_family>, METHOD => 'delete'}                        
+Example: alter 'test_table', {NAME => 'colfam2', METHOD => 'delete'} 
+                                            
+
+Command: alter <table_name>, {NAME => <column_family>, VERSIONS => 2}                                   -  The default number for version is 3                 
+Example: alter 'test_table', {NAME => 'colfam2', VERSIONS => 2} 
+
+
+Command: alter <table_name>, READONLY                       
+Example: alter 'test_table', READONLY
+
+
+Command: alter <table_name>, NAME => <column_family>, VERSIONS => 5          
+Example: alter 'test_table', NAME => 'colfam3', VERSIONS => 5
+
+
+
+Command: alter <table_name>, MAX_FILESIZE => '13421778'    
+Example: alter 'test_table', MAX_FILESIZE => '13421778'   
+
+  
+
+Command: alter_status <table_name>
+Example: alter_status 'test_table'
+
+
+---------------------------------------- Create a name space--------------------------------------------------------------
+
+Command: create_namespace <namespace_name>
+Example: create_namespace 'ns2'
+
+
+Command: create <namespace_name:table_name>, <column_family> 
+Example: create 'ns2:rt1', 'cf'
+
+
+Command: list <namespace_name:table_name>                   - Check if the table exist under this namespace 
+Example: list 'ns2:rt1'
+
+
+Command: describe_namespace  <namespace_name>                - Gives a describtion of the namespace
+Example: describe_namespace 'ns2'
+
+
+
+Command: list_namespace                                       - Shows all the available namespaces
+Example: list_namespace                                       
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+--Video_3--------------------------------------------------------------------------------------------------------
+----------------------------------------Put--------------------------------------------------------------
+
+- create 'f' 'f1'
+
+Command: put <table_name>, <row_key>, <column_family:column_name>  <value>
+Example: put 'f', 1, 'f1:name', 'Amrit'
+Example: put 'f', 1, 'f1:city', 'XYZ'
+Example: put 'f', 1, 'f1:id', '10'
+
+
+
+----------------------------------------Get the data(scan)--------------------------------------------------------------
+
+Command: scan <table_name>
+Example: put 'f'
+
+Command: get <table_name>, <row_key>
+Example: get 'f','1'
+
+
+Command: get <table_name>, <row_key>, {COLUMN => ' <column_family>:column_name'} 
+Example: get 'f','1',{COLUMN => 'f1:name'}
+
+
+
+Command: get <table_name>, <row_key>, {COLUMN => ['<column_family>:column1_name','<column_family>:column2_name',...]} 
+Example: get 'f','1',{COLUMN => ['f1:name','f1:id']}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
